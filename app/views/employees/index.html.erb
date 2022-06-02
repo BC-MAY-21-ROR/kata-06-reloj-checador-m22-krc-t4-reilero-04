@@ -1,0 +1,29 @@
+<h1>Employees</h1>
+<hr>
+<div style="display:grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;justify-content: space-around; margin: 10px">
+  <% @employees.each do |employee| %>
+    <div>
+      <%= employee.name %>
+    </div>
+    <div>
+      <%= employee.email %>
+    </div>
+    <div>
+      <%= employee.position %>
+    </div>
+    <div>
+      <%= employee.private_number %>
+    </div>
+    <div>
+      <%= employee.employee_number %>
+    </div>
+    <div>
+      <%= employee.admin%>
+    </div>
+  <% end %>
+</div>
+<div>
+  <a href="<%= new_employee_path %>">
+    <button>Create New Employee</button>
+  </a>
+</div>
