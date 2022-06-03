@@ -1,24 +1,11 @@
-<h1>Employees</h1>
 <hr>
-<div style="display:grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;justify-content: space-around; margin: 10px">
+<div style="display:grid; grid-template-columns: 1fr 1fr;justify-content: space-evenly; gap: 10px">
   <% @employees.each do |employee| %>
-    <div>
+    <div style="justify-self: right;">
       <%= employee.name %>
     </div>
     <div>
-      <%= employee.email %>
-    </div>
-    <div>
-      <%= employee.position %>
-    </div>
-    <div>
-      <%= employee.private_number %>
-    </div>
-    <div>
-      <%= employee.employee_number %>
-    </div>
-    <div>
-      <%= employee.admin%>
+    <%= button_to  "Detail", employee, method: :get %>
     </div>
   <% end %>
 </div>
