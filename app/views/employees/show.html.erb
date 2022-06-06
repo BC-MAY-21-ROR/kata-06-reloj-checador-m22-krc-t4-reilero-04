@@ -1,0 +1,36 @@
+<div style="display: flex; flex-direction: column; align-items:center;">
+<h1>Employee Information</h1>
+<hr>
+<div style="display:grid; grid-direction:column; justify-content: space-around; gap: 10px; padding-left: 10px;" >
+<div style="display:flex; flex-direction: column;justify-content: space-between; gap: 10px;">
+<div>
+<label for="">Name:</label>
+<%= @employee.name %>
+</div>
+<div>
+<label for="">Email:</label>
+<%= @employee.email %>
+</div>
+<div>
+<label for="">Company Position:</label>
+<%= @employee.position %>
+</div>
+<div>
+<label for="">Private Number:</label>
+<%= @employee.private_number %>
+</div>
+<div>
+<label for="">Employee Number:</label>
+<%= @employee.employee_number %>
+</div>
+<div>
+<label for="">Admin Rol:</label>
+<%= @employee.admin %>
+</div>
+</div>
+<button>
+<%= link_to  "Edit Employee", edit_employee_path %>
+</button>
+<%= button_to  "Delete Employee", @employee, method: :delete %>
+</div>
+</div>
