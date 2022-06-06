@@ -1,8 +1,8 @@
-<div style="display: flex; flex-direction: column; align-items:center;">
+<div>
 <h1>Store Information</h1>
 <hr>
-<div style="display:grid; grid-direction:column; justify-content: space-around; gap: 10px; padding-left: 10px;" >
-    <div style="display:flex; flex-direction: column;justify-content: space-between; gap: 10px;">
+<div>
+    <div>
         <div>
             <label for="">Name:</label>
             <%= @store.name %>
@@ -13,7 +13,7 @@
         </div>
     </div>
     <button>
-        <%= link_to  "Edit Store", edit_store_path %>
+        <%= link_to  "Edit Store", edit_store_path, class: "btn btn-inverse" %>
     </button>
     <%= button_to  "Delete Store", @store, method: :delete %>
     </div>

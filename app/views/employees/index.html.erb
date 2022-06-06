@@ -1,8 +1,8 @@
 <hr>
 <h1>EMPLOYEES</h1>
-<div style="display:grid; grid-template-columns: 1fr 1fr;justify-content: space-evenly; gap: 10px">
+<div>
   <% @employees.each do |employee| %>
-    <div style="justify-self: right;">
+    <div>
       <%= employee.name %>
     </div>
     <div>
@@ -11,7 +11,5 @@
   <% end %>
 </div>
 <div>
-  <a href="<%= new_employee_path %>">
-    <button>Create New Employee</button>
-  </a>
+  <%= button_to 'Create New Employee', new_employee_path, method: :get %>
 </div>
