@@ -1,0 +1,13 @@
+<h1>Edit Stores</h1>
+
+<%= form_with model: @store do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+  <%= form.submit 'Edit store' %>
+<% end %>

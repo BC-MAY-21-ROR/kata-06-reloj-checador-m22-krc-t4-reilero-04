@@ -1,0 +1,17 @@
+<hr>
+<h1>STORES</h1>
+<div style="display:grid; grid-template-columns: 1fr 1fr;justify-content: space-evenly; gap: 10px">
+  <% @stores.each do |store| %>
+    <div style="justify-self: right;">
+      <%= store.name %>
+    </div>
+    <div>
+    <%= button_to  "Detail", store, method: :get %>
+    </div>
+  <% end %>
+</div>
+<div>
+  <a href="<%= new_store_path %>">
+    <button>Create New Store</button>
+  </a>
+</div>
