@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,25 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_220_530_230_357) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_07_212911) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'employees', force: :cascade do |t|
-    t.string 'name'
-    t.string 'email'
-    t.string 'position'
-    t.integer 'private_number'
-    t.integer 'employee_number'
-    t.boolean 'admin'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "employees", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "position"
+    t.integer "private_number"
+    t.integer "employee_number"
+    t.boolean "admin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_employees_on_deleted_at"
   end
 
-  create_table 'stores', force: :cascade do |t|
-    t.string 'name'
-    t.string 'address'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "stores", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
 end

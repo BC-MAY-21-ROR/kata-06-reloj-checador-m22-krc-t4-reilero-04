@@ -86,3 +86,5 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'pg', '~> 1.3', '>= 1.3.5'
 
 gem 'tzinfo-data'
+
+gem "paranoia", "~> 2.2"
