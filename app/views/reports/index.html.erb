@@ -1,0 +1,9 @@
+<h1>REPORTS</h1>
+
+<%= form_with model: @employee do |form| %>
+  <!--<%= form.label :date %>-->
+  <%= form.text_field :id %>
+<% end %>
+<%= button_to "Attendance by day", reports_path, method: :get %>
+<%= button_to "Average time employees checked in/out by month", reports_path, method: :get %>
+<%= button_to "Absence report by month", reports_path, method: :get %>
