@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EmployeesController < ApplicationController
   def index
     @employees = Employee.all
@@ -34,6 +36,7 @@ class EmployeesController < ApplicationController
     end
   end
 
+
   def destroy
     @employee = Employee.find(params[:id])
     if @employee.destroy
@@ -44,8 +47,8 @@ class EmployeesController < ApplicationController
   end
 
   private
+
   def employee_params
     params.require(:employee).permit(:name, :email, :position, :private_number, :employee_number, :admin)
   end
-
 end

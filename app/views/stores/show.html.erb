@@ -1,0 +1,20 @@
+<div>
+  <h1>Store Information</h1>
+  <hr>
+  <div>
+    <div>
+      <div>
+        <label for="">Name:</label>
+        <%= @store.name %>
+      </div>
+      <div>
+        <label for="">Address:</label>
+        <%= @store.address %>
+      </div>
+    </div>
+    <button>
+      <%= link_to  "Edit Store", edit_store_path, class: "btn btn-inverse" %>
+    </button>
+    <%= button_to  "Delete Store", @store, method: :deleted_at %>
+  </div>
+</div>

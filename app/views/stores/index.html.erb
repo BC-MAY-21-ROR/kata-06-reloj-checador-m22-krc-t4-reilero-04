@@ -1,0 +1,15 @@
+<hr>
+<h1>STORES</h1>
+<div>
+  <% @stores.each do |store| %>
+    <div>
+      <%= store.name %>
+    </div>
+    <div>
+    <%= button_to  "Detail", store, method: :get %>
+    </div>
+  <% end %>
+</div>
+<div>
+  <%= button_to 'Create New Store', new_store_path, method: :get %>
+</div>
