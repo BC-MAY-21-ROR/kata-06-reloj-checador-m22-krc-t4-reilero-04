@@ -2,6 +2,8 @@
 
 class EmployeesController < ApplicationController
   def index
+    # @employees = Employee.select { |x| x.admin == true }
+    # @employees = Employee.where(admin: true)
     @employees = Employee.all
   end
 
@@ -16,7 +18,7 @@ class EmployeesController < ApplicationController
   def create
     @employee = Employee.new(employee_params)
     if @employee.save
-      redirect_to employees_path, notice: 'New employee creadted succesfully'
+      redirect_to employees_path, notice: 'New employee created succesfully'
     else
       render :new, status: :unprocessable_entity
     end

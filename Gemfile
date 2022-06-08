@@ -88,3 +88,5 @@ gem 'pg', '~> 1.3', '>= 1.3.5'
 gem 'tzinfo-data'
 
 gem "paranoia", "~> 2.2"
+
+gem 'pry', '~> 0.14.1'
