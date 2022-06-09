@@ -1,4 +1,9 @@
+<%= javascript_tag 'clock' %>
+
 <h1>Home Check In</h1>
+<form name="form_reloj">
+  <input type="text" name="reloj" size="10" onfocus="window.document.form_reloj.reloj.blur()">
+</form>
 <div>
   <h3>
     <%= @date = Time.now.strftime("%d-%m-%Y") %>
@@ -12,17 +17,11 @@
 <hr>
 <%= form_with model: @attendance do |form| %>
   <div>
-    <%= form.label 'Date' %>
-    <%= form.date_field :actual_date, value: Time.now.strftime('%Y-%m-%d'), readonly: true %>
+    <%= form.label 'Private number'%>
+    <!--<%= form.text_field :attribute %>-->
   </div>
-  <div>
-    <%= form.label 'Check In Hour' %>
-    <%= form.time_field :check_in, value: Time.now.strftime('%H:%M'), readonly: true %>
-  </div>
-  <div>
-    <%= form.label 'Check Out Hour' %>
-    <%= form.time_field :check_out, value: Time.now.strftime('%H:%M'), readonly: true %>
-  </div>
+    <% form.text_field :check_in, value: Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
+    <% form.text_field :check_out, value: Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
   <div>
     <%= form.submit 'Check' %>
   </div>

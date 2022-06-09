@@ -1,7 +1,6 @@
 class AttendancesController < ApplicationController
 
   def index
-    
     @attendance = Attendance.new
   end
 
@@ -10,6 +9,7 @@ class AttendancesController < ApplicationController
   end
 
   def new
+
   end
   
   def create
