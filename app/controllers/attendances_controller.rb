@@ -1,7 +1,8 @@
-class AttendanceController < ApplicationController
+class AttendancesController < ApplicationController
 
   def index
-    @attendances = Attendance.all
+    
+    @attendance = Attendance.new
   end
 
   def show
@@ -9,15 +10,14 @@ class AttendanceController < ApplicationController
   end
 
   def new
-    @attendance = Attendance.new
   end
-
+  
   def create
     @attendance = Attendance.new(attendance_params)
     if @attendance.save
-      redirect_to attendance_path, notice: 'Check In Exitoso'
+      redirect_to attendances_path, notice: 'Check In Exitoso'
     else
-      redirect_to attendance_path, status: :unprocessable_entity
+      redirect_to attendances_path, status: :unprocessable_entity
     end
   end
 

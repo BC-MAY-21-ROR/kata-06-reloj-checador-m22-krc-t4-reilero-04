@@ -13,17 +13,20 @@
 <%= form_with model: @attendance do |form| %>
   <div>
     <%= form.label 'Date' %>
-    <%= form.text_field :actual_date%>
+    <%= form.date_field :actual_date, value: Time.now.strftime('%Y-%m-%d'), readonly: true %>
   </div>
   <div>
     <%= form.label 'Check In Hour' %>
-    <%= form.text_field :check_in%>
+    <%= form.time_field :check_in, value: Time.now.strftime('%H:%M'), readonly: true %>
   </div>
   <div>
     <%= form.label 'Check Out Hour' %>
-    <%= form.text_field :check_out%>
+    <%= form.time_field :check_out, value: Time.now.strftime('%H:%M'), readonly: true %>
   </div>
   <div>
     <%= form.submit 'Check' %>
   </div>
 <% end %>
+<div>
+  <%= button_to 'Admin Panel', admin_index_path, method: :get%>
+</div>

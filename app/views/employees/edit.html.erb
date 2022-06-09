@@ -1,5 +1,4 @@
 <h1>Edit Employees</h1>
-
 <%= form_with model: @employee do |form| %>
   <div>
     <%= form.label :id %>
@@ -27,4 +26,5 @@
     <div>
       <%= form.submit ' Edit employee' %>
     </div>
-<% end %>
+  <% end %>
+  <%= render 'back_to_employee' %>
