@@ -60,3 +60,11 @@ section{
     background-color: gray;
     color:white;
 }
+
+.clock_input{
+background-color : Black; 
+color : White; 
+font-family : Verdana, Arial, Helvetica; 
+font-size : 20pt; 
+text-align : center;
+}
