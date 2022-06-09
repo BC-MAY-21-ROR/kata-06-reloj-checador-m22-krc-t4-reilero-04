@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_08_223043) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_09_003103) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "attendance_table", force: :cascade do |t|
-    t.date "actual_date"
-    t.time "check_in"
-    t.time "check_out"
+  create_table "attendance", force: :cascade do |t|
+    t.string "actual_date"
+    t.string "check_in"
+    t.string "check_out"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

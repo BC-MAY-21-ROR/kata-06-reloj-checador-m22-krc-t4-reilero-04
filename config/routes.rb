@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :stores
   resources :admin
   resources :reports
+  resources :attendance
 end

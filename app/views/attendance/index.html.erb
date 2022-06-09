@@ -1,0 +1,29 @@
+<h1>Home Check In</h1>
+<div>
+  <h3>
+    <%= @date = Time.now.strftime("%d-%m-%Y") %>
+  </h3>
+</div>
+<div>
+  <h1>
+    <%= @hour = Time.now.strftime("%H:%M:%S") %>
+  </h1>
+</div>
+<hr>
+<%= form_with model: @attendance do |form| %>
+  <div>
+    <%= form.label 'Date' %>
+    <%= form.text_field :actual_date%>
+  </div>
+  <div>
+    <%= form.label 'Check In Hour' %>
+    <%= form.text_field :check_in%>
+  </div>
+  <div>
+    <%= form.label 'Check Out Hour' %>
+    <%= form.text_field :check_out%>
+  </div>
+  <div>
+    <%= form.submit 'Check' %>
+  </div>
+<% end %>
