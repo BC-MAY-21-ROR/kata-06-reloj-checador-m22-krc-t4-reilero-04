@@ -3,6 +3,6 @@
 class Employee < ApplicationRecord
     acts_as_paranoid
     
-    belongs_to :stores
+    belongs_to :store
     has_many :attendances
 end

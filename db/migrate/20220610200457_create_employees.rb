@@ -7,8 +7,7 @@ class CreateEmployees < ActiveRecord::Migration[7.0]
       t.integer :private_number
       t.boolean :admin
       t.datetime :deleted_at
-      t.references :stores, null: false, foreign_key: true
-
+      t.references :store, null: false, foreign_key: true
 
       t.timestamps
     end

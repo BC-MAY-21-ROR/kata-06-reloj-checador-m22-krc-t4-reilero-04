@@ -24,7 +24,7 @@ class AttendancesController < ApplicationController
   private
 
   def attendance_params
-    params.require(:attendance).permit(:actual_date, :check_in, :check_out)
+    params.require(:attendance).permit(:check_in, :check_out, :employee_id)
   end
 
 

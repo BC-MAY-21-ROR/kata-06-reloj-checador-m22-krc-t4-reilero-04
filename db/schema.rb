@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_10_185923) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_10_200535) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "attendances", force: :cascade do |t|
     t.datetime "check_in"
     t.datetime "check_out"
-    t.bigint "employees_id", null: false
+    t.bigint "employee_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["employees_id"], name: "index_attendances_on_employees_id"
+    t.index ["employee_id"], name: "index_attendances_on_employee_id"
   end
 
   create_table "employees", force: :cascade do |t|
@@ -30,10 +30,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_10_185923) do
     t.integer "private_number"
     t.boolean "admin"
     t.datetime "deleted_at"
-    t.bigint "stores_id", null: false
+    t.bigint "store_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["stores_id"], name: "index_employees_on_stores_id"
+    t.index ["store_id"], name: "index_employees_on_store_id"
   end
 
   create_table "stores", force: :cascade do |t|
@@ -43,6 +43,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_10_185923) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "attendances", "employees", column: "employees_id"
-  add_foreign_key "employees", "stores", column: "stores_id"
+  add_foreign_key "attendances", "employees"
+  add_foreign_key "employees", "stores"
 end
