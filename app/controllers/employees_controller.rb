@@ -38,7 +38,6 @@ class EmployeesController < ApplicationController
     end
   end
 
-
   def destroy
     @employee = Employee.find(params[:id])
     if @employee.destroy

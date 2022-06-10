@@ -1,70 +1,70 @@
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
 }
 
 .gradient-custom {
-    /* fallback for old browsers */
-    background: #6a11cb;
-    
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
-    
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
-    }
+  /* fallback for old browsers */
+  background: #6a11cb;
 
-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
 }
 
-.top{
-    width: 500px;
-    height: 100px;
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.top h2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white
+.top {
+  width: 500px;
+  height: 100px;
 }
 
-.middle{
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    height: 500px;
-    gap: 70px;
+.top h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white
 }
 
-.button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    background-color: white;
-    font-size: 25px;
-    border: 1px solid white;
-    padding: 15px;
-    border-radius: 10px;
-    text-decoration: none;
+.middle {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 500px;
+  gap: 70px;
 }
 
-.button:hover{
-    background-color: gray;
-    color:white;
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: white;
+  font-size: 25px;
+  border: 1px solid white;
+  padding: 15px;
+  border-radius: 10px;
+  text-decoration: none;
 }
 
-.clock_input{
-background-color : Black; 
-color : White; 
-font-family : Verdana, Arial, Helvetica; 
-font-size : 20pt; 
-text-align : center;
+.button:hover {
+  background-color: gray;
+  color: white;
+}
+
+.clock_input {
+  background-color: Black;
+  color: White;
+  font-family: Verdana, Arial, Helvetica;
+  font-size: 20pt;
+  text-align: center;
 }

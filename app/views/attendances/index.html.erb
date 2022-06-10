@@ -17,8 +17,8 @@
     <%= form.label 'Private number'%>
     <%= form.number_field :employee_id %>
   </div>
-    <%= form.text_field :check_in, value: DateTime.now.strftime("%Y-%m-%d %H:%M:%S") %>
-    <%= form.text_field :check_out, value: DateTime.now.strftime("%Y-%m-%d %H:%M:%S") %>
+    <%= form.hidden_field :check_in, value: DateTime.now.strftime("%Y-%m-%d %H:%M:%S") %>
+    <%= form.hidden_field :check_out, value: DateTime.now.strftime("%Y-%m-%d %H:%M:%S") %>
   <div>
     <%= form.submit 'Check' %>
   </div>

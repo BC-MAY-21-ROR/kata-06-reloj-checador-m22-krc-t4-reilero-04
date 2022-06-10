@@ -1,17 +1,14 @@
-class AttendancesController < ApplicationController
+# frozen_string_literal: true
 
+class AttendancesController < ApplicationController
   def index
     @attendance = Attendance.new
   end
 
-  def show
+  def show; end
 
-  end
+  def new; end
 
-  def new
-
-  end
-  
   def create
     @attendance = Attendance.new(attendance_params)
     if @attendance.save
@@ -26,6 +23,4 @@ class AttendancesController < ApplicationController
   def attendance_params
     params.require(:attendance).permit(:check_in, :check_out, :employee_id)
   end
-
-
 end
