@@ -4,14 +4,9 @@ class AttendancesController < ApplicationController
     @attendance = Attendance.new
   end
 
-  def show
-
-  end
-
-  def new
-
-  end
+  def show; end
   
+  def new; end
   def create
     @attendance = Attendance.new(attendance_params)
     if @attendance.save
