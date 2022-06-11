@@ -27,6 +27,10 @@
         <label for="">Admin Rol:</label>
         <%= @employee.admin %>
       </div>
+      <div>
+        <label for="">Branch:</label>
+        <%= @employee.store_id %>
+      </div>
     </div>
     <button>
       <%= link_to  "Edit Employee", edit_employee_path, class: "btn btn-inverse" %>
@@ -34,3 +38,4 @@
     <%= button_to  "Delete Employee", @employee, method: :delete %>
   </div>
 </div>
+<%= render 'back_to_employee' %>

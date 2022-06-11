@@ -19,7 +19,13 @@
   <div>
     <%= form.label 'Rol (Admin?)' %>
     <%= form.text_field :admin %>
-    <div>
-      <%= form.submit 'Create new employee' %>
-    </div>
-  <% end %>
+  </div>
+  <div>
+    <%= form.label 'Branch id assigned' %>
+    <%= form.number_field :store_id %>
+  </div>
+  <div>
+    <%= form.submit 'Create new employee' %>
+  </div>
+<% end %>
+<%= render 'back_to_employee' %>
