@@ -91,3 +91,6 @@ gem "paranoia", "~> 2.2"
 gem 'pry', '~> 0.14.1'
 
 gem "letter_opener", group: :development
+
+gem 'jquery-rails', '~> 4.5'
+gem 'rails-ujs', '~> 0.1.0'
