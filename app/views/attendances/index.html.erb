@@ -10,13 +10,15 @@
   <input class="clock_input" type="text" name="reloj" size="10" onfocus="window.document.form_reloj.reloj.blur()">
 </form>
 
-
 <hr>
 <%= form_with model: @attendance do |form| %>
   <div>
-    <%= form.label 'Private number'%>
-    <%= form.number_field :employee_id %>
+    <%= form.label :employee_id %>
+    <%= collection_select(:employee, :employee_id, Employee.all, :id, :private_number) %>
   </div>
+  <!--<div>
+    <%= form.text_field :employee_id, value: @var %>
+  </div>-->
     <%= form.hidden_field :check_in, value: DateTime.now.strftime("%Y-%m-%d %H:%M:%S") %>
     <%= form.hidden_field :check_out, value: DateTime.now.strftime("%Y-%m-%d %H:%M:%S") %>
   <div>
