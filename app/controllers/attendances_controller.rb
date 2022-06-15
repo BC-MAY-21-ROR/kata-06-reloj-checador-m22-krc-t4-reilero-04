@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class AttendancesController < ApplicationController
+  skip_before_action :authenticate_employee!
   def index
     @attendance = Attendance.new
   end
