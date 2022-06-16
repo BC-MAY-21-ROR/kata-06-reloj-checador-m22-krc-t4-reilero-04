@@ -6,16 +6,13 @@ class Employee < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-
-
-
   belongs_to :store
   has_many :attendances
 
   def active_for_authentication?
-    #remember to call the super
-    #then put our own check to determine "active" state using 
-    #our own "is_active" column
-    super and self.admin?
+    # remember to call the super
+    # then put our own check to determine "active" state using
+    # our own "is_active" column
+    super and admin?
   end
 end
