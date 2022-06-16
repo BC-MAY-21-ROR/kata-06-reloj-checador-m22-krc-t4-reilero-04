@@ -33,7 +33,7 @@
   </div>
   <div>
     <%= form.label 'Branch id assigned' %>
-    <%= form.number_field :store_id %>
+    <%= collection_select(:employee, :store_id, Store.all, :id, :full_store) %>
   </div>
   <div>
     <%= form.submit 'Create new employee' %>

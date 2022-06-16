@@ -11,11 +11,9 @@
 <hr>
 <%= form_with model: @attendance do |form| %>
   <div>
-    <%= form.label 'Private number'%>
-    <%= form.number_field :employee_id %>
+    <%= form.label 'Private number' %>
+    <%= form.text_field :employee_private_number %>
   </div>
-  <%= form.hidden_field :check_in, value: DateTime.now.strftime("%Y-%m-%d %H:%M:%S") %>
-  <%= form.hidden_field :check_out, value: DateTime.now.strftime("%Y-%m-%d %H:%M:%S") %>
   <div>
     <%= form.submit 'Check' %>
   </div>
