@@ -1,3 +1,9 @@
-<%= link_to admin_index_path do %>
+<% if current_employee %>
+  <div>Sesion de: <%= current_employee.name %> </div>
+  <%= link_to "Log out", destroy_employee_session_path, :method => :delete %>
+<% else %>
+  <%= link_to "Log in", new_employee_session_path, :method => :get %>
+<% end %>
+<%= link_to attendances_path do %>
   <h1>Check time clock - admin home</h1>
 <% end %>
