@@ -6,7 +6,7 @@ class RegistrationsController < Devise::RegistrationsController
     def redirect_unless_admin
       unless current_employee.try(:admin?)
         flash[:error] = "Only admins can do that"
-        redirect_to root_path
+        redirect_to stores_path
       end
     end
   
