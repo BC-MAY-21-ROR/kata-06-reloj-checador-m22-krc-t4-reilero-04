@@ -1,5 +1,9 @@
 <hr>
 <h1>STORES</h1>
+<%= form_with url: stores_path, method: :get do |form| %>
+  <!--<%= form.label :date %>-->
+  <%= form.text_field :query_text, placeholder: 'nombre sucursal', onChange: 'this.form.requestSubmit()', value: params[:query_text] %>
+<% end %>
 <div>
   <% @stores.each do |store| %>
     <div>

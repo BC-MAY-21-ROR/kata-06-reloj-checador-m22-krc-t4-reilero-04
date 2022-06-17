@@ -7,3 +7,6 @@ application.debug = false
 window.Stimulus   = application
 
 export { application }
+
+import Rails from "@rails/ujs"
+Rails.start();

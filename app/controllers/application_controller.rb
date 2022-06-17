@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  include PgSearch::Model
   before_action :authenticate_employee!
   protect_from_forgery with: :exception
 

@@ -3,6 +3,9 @@
 class StoresController < ApplicationController
   def index
     @stores = Store.all
+    if params[:query_text].present?
+      @stores = @stores.global_search(params[:query_text])
+    end
   end
 
   def new
@@ -16,7 +19,7 @@ class StoresController < ApplicationController
   def create
     @store = Store.new(store_params)
     if @store.save
-      redirect_to stores_path, notice: 'New store created succesfully'
+      redirect_to stores_path, notice: 'New store created'
     else
       render :new, status: :unprocessable_entity
     end

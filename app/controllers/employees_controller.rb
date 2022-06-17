@@ -1,10 +1,14 @@
 # frozen_string_literal: true
 
 class EmployeesController < ApplicationController
+
   def index
     # @employees = Employee.select { |x| x.admin == true }
     # @employees = Employee.where(admin: true)
     @employees = Employee.all
+    if params[:query_text].present?
+      @employees = @employees.global_search(params[:query_text])
+    end
   end
 
   def new
@@ -52,6 +56,7 @@ class EmployeesController < ApplicationController
   def employee_params
     params.require(:employee).permit(:name, :email, :position, :private_number, :admin, :store_id)
   end
+
 
 
 end

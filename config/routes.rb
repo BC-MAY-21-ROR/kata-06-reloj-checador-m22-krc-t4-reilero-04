@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   resources :reports
   resources :attendances
   # resources :users
+  # get '/products', to: 'products#index'
+  get 'attendances_by_day', to: 'attendances_by_day#index'
+  get 'absences_reports_by_month', to: 'absences_reports_by_month#index'
+
 end

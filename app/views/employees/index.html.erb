@@ -1,5 +1,9 @@
 <hr>
 <h1>EMPLOYEES</h1>
+<%= form_with url: employees_path, method: :get do |form| %>
+  <!--<%= form.label :date %>-->
+  <%= form.text_field :query_text, placeholder: 'nombre empleado', onChange: 'this.form.requestSubmit()', value: params[:query_text] %>
+<% end %>
 <div>
   <% @employees.each do |employee| %>
     <div>
