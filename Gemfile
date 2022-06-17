@@ -95,4 +95,4 @@ gem "letter_opener", group: :development
 gem 'jquery-rails', '~> 4.5'
 gem 'rails-ujs', '~> 0.1.0'
 
-gem 'pg_search'
+gem 'pg_search', '~> 2.3'

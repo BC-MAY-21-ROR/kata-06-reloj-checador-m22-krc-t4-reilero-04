@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 class Store < ApplicationRecord
-    has_many :employees
+  include PgSearch::Model
+  pg_search_scope :global_search, against: %i[name address], using: { tsearch: { prefix: true } }
 
-    def full_store
-      self.name + " " + self.address
-    end
+  has_many :employees
+
+  def full_store
+    name + ' ' + address
+  end
 end

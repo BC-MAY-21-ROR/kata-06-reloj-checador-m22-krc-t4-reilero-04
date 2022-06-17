@@ -3,6 +3,9 @@
 class StoresController < ApplicationController
   def index
     @stores = Store.all
+    if params[:query_text].present?
+      @stores = @stores.global_search(params[:query_text])
+    end
   end
 
   def new

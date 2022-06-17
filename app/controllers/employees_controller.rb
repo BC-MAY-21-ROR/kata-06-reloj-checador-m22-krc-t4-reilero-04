@@ -6,6 +6,9 @@ class EmployeesController < ApplicationController
     # @employees = Employee.select { |x| x.admin == true }
     # @employees = Employee.where(admin: true)
     @employees = Employee.all
+    if params[:query_text].present?
+      @employees = @employees.global_search(params[:query_text])
+    end
   end
 
   def new
