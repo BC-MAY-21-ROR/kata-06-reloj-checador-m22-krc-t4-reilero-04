@@ -1,0 +1,6 @@
+<% @employees.each do |employee|%>
+  <div>
+    <%= employee.name %>
+    <%= @attendances_by_day.select { |attendance| attendance.employee_id == employee.id}.count %>
+  </div>
+<% end %>
