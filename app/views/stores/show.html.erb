@@ -15,7 +15,7 @@
     <button>
       <%= link_to  "Edit Store", edit_store_path, class: "btn btn-inverse" %>
     </button>
-    <%= button_to  "Delete Store", @store, method: :deleted_at %>
+    <%= button_to  "Delete Store", @store, method: :delete %>
   </div>
 </div>
 <%= render 'back_to_stores' %>

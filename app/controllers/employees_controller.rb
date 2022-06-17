@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class EmployeesController < ApplicationController
+
   def index
     # @employees = Employee.select { |x| x.admin == true }
     # @employees = Employee.where(admin: true)
@@ -52,6 +53,7 @@ class EmployeesController < ApplicationController
   def employee_params
     params.require(:employee).permit(:name, :email, :position, :private_number, :admin, :store_id)
   end
+
 
 
 end

@@ -7,3 +7,44 @@
 <%= button_to "Average time employees checked in/out by month", reports_path, method: :get %>
 <%= button_to "Absence report by month", reports_path, method: :get %>
 <%= render 'shared/back_to_admin' %>
+<table>
+  <thead>
+    <tr>
+      <th>
+        <p>Date</p>
+      </th>
+      <th>
+        <p>Employee</p>
+      </th>
+      <th>
+        <p>Check-in</p>
+      </th>
+      <th>
+        <p>Check-out</p>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employees = Employee.all %>
+    <% @reports.each do |report|%>
+      <% @employees.each do |employee| %>
+        <% if employee.id == report.employee_id %>
+          <tr>
+            <td>
+              <%=report.check_in.strftime("%d-%m-%Y")%>
+            </td>
+            <td>
+              <%=employee.name%>
+            </td>
+            <td>
+              <%= report.check_in.strftime("%H:%M:%S") %>
+            </td>
+            <td>
+              <%= report.check_out.strftime("%H:%M:%S") %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

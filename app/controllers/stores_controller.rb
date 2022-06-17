@@ -16,7 +16,7 @@ class StoresController < ApplicationController
   def create
     @store = Store.new(store_params)
     if @store.save
-      redirect_to stores_path, notice: 'New store created succesfully'
+      redirect_to stores_path, notice: 'New store created'
     else
       render :new, status: :unprocessable_entity
     end

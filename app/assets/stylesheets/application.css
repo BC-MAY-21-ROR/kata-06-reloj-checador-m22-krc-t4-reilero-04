@@ -529,4 +529,21 @@
     background: none;
     margin: 0;
     padding: 0;
+  }@import "bootstrap";
+
+
+  .notice {
+    justify-self: center;
+    align-self: center; 
+    background-color: green; 
+    color: white; 
+    font-weight: bold;
+  }
+
+  .alert {
+    justify-self: center;
+    align-self: center; 
+    background-color: red; 
+    color: white; 
+    font-weight: bold;
   }

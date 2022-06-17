@@ -3,6 +3,6 @@
 class ReportsController < ApplicationController
   
   def index
-    @report = Employee.all
+    @reports = Attendance.all
   end
 end

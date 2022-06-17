@@ -9,10 +9,6 @@ class Employees::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  def create
-    
-    redirect_to root_path, notice: "okaokoakokao"
-  end
 
   # DELETE /resource/sign_out
   # def destroy
