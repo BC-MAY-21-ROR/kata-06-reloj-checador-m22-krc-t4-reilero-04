@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 <h1>Absences by month</h1>
-=======
-<h1>Absence report by month</h1>
-
->>>>>>> ab68a4123dabb10fb16bd6b7aae78f8134008779
 <% @employees.each do |employee|%>
   <div>
     <%= Date::MONTHNAMES[Date.today.month]%>
@@ -11,11 +6,11 @@
     <%= @attendances_by_day.select { |attendance| attendance.employee_id == employee.id}.count %>
   </div>
 <% end %>
-<% days = Time.days_in_month(1, 2022) %>
-<% days = Time.days_in_month(2, 2022) %>
-<% days = Time.days_in_month(3, 2022) %>
-<% days = Time.days_in_month(4, 2022) %>
-<% days = Time.days_in_month(5, 2022) %>
+<% days_january = Time.days_in_month(1, 2022) %>
+<% days_february = Time.days_in_month(2, 2022) %>
+<% days_march = Time.days_in_month(3, 2022) %>
+<% days_april = Time.days_in_month(4, 2022) %>
+<% days_ = Time.days_in_month(5, 2022) %>
 <% days = Time.days_in_month(6, 2022) %>
 <% days = Time.days_in_month(7, 2022) %>
 <% days = Time.days_in_month(8, 2022) %>
