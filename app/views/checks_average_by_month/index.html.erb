@@ -4,6 +4,8 @@
   <%= form.text_field :query_text, placeholder: 'Type a month', onChange: 'this.form.requestSubmit()', value: params[:query_text] %>
 <% end %>
 
+<%= show_months %>
+
 <table>
   <thead>
     <tr>
@@ -13,35 +15,16 @@
       <th>
         <p>Employee</p>
       </th>
-      <!--<th>
-        <p>Average check-in</p>
-      </th>
-      <th>
-        <p>Average check-out</p>
-      </th>-->
     </tr>
   </thead>
   <tbody>
-    <% @employees = Employee.all %>
-    <% @checks_average_by_month.each do |check_average_by_month|%>
-      <% @employees.each do |employee| %>
-        <% if employee.id == check_average_by_month.employee_id %>
-          <tr>
-            <td>
-              <%=check_average_by_month.check_in.strftime("%B")%>
-            </td>
-            <td>
-              <%=employee.name%>
-            </td>
-            <!--<td>
-              <%= check_average_by_month.check_in.strftime("%H:%M:%S") %>
-            </td>
-            <td>
-              <%= check_average_by_month.check_out.strftime("%H:%M:%S") if check_average_by_month.check_out != nil %>
-            </td>-->
-          </tr>
-        <% end %>
-      <% end %>
-    <% end %>
+    <tr>
+      <td>
+        
+      </td>
+      <td>
+        
+      </td>
+    </tr>
   </tbody>
 </table>
