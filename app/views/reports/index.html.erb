@@ -1,6 +1,6 @@
 <h1>REPORTS</h1>
 <%= button_to "Attendance by day", attendances_by_day_path, method: :get %>
-<%= button_to "Average time employees checked in/out by month", reports_path, method: :get %>
+<%= button_to "Average time employees checked in/out by month", checks_average_by_month_path, method: :get %>
 <%= button_to "Absence report by month", absences_reports_by_month_path, method: :get %>
 <%= render 'shared/back_to_admin' %>
 <h2>Attendances today</h2>
