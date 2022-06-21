@@ -93,3 +93,8 @@ gem 'jquery-rails', '~> 4.5'
 gem 'rails-ujs', '~> 0.1.0'
 
 gem 'pg_search', '~> 2.3'
+
+source "https://rails-assets.org"
+
+gem 'rails-assets-bootstrap', ">= 4.0.0.alpha.2"
+gem 'rails-assets-tether'
