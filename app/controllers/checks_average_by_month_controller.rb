@@ -21,6 +21,13 @@ class ChecksAverageByMonthController < ApplicationController
       end
     end
 
+    attendances.each do |attendance|
+      month = attendance.check_in.strftime("%B")
+      if month == months[2].keys
+        months[2]["October"].push("1")
+      end
+    end
+
     months
   end
 
