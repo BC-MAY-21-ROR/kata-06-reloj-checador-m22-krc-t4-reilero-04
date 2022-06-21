@@ -96,5 +96,4 @@ gem 'pg_search', '~> 2.3'
 
 source "https://rails-assets.org"
 
-gem 'rails-assets-bootstrap', ">= 4.0.0.alpha.2"
-gem 'rails-assets-tether'
+gem 'bootstrap', '~> 5.1.3'
