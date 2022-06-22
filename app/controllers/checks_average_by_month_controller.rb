@@ -10,41 +10,37 @@ class ChecksAverageByMonthController < ApplicationController
     attendances = Attendance.all
     employees = Employee.all
     
-    months = []
-    m=[]
+    hash_of_months = []
+    individual_months=[]
 
     attendances.each do |attendance|
       month = attendance.check_in.strftime("%B")
-      unless months.include?(month=>[])
-        months.push(month=>[])
-        m<<month
+      unless hash_of_months.include?(month=>[])
+        hash_of_months.push(month=>[])
+        individual_months<<month
       end
     end
 
     attendances.each do |attendance|
       user_month = attendance.check_in.strftime("%B")
-      months.count.times do |i|
-        if months[i].has_key?(user_month)
-          months[i][user_month].push(attendance.employee_id)
-        end
+      hash_of_months.count.times do |i|
+        hash_of_months[i][user_month].push(attendance.employee_id) if hash_of_months[i].has_key?(user_month)
       end
     end
 
-    months.count.times do |i|
-      months[i][m[i]]=months[i][m[i]].uniq
+    hash_of_months.count.times do |i|
+      hash_of_months[i][individual_months[i]]=hash_of_months[i][individual_months[i]].uniq
     end
 
     employees.each do |employee|
-      months.count.times do |i|
-        months[i][m[i]].count.times do |ii|
-          if months[i][m[i]][ii] == employee.id
-            months[i][m[i]][ii] = employee.name
-          end
+      hash_of_months.count.times do |i|
+        hash_of_months[i][individual_months[i]].count.times do |ii|
+          hash_of_months[i][individual_months[i]][ii] = employee.name if hash_of_months[i][individual_months[i]][ii] == employee.id
         end
       end
     end
 
-    months
+    hash_of_months
   end
 
   def calculate_average_of_times( times )
@@ -55,15 +51,6 @@ class ChecksAverageByMonthController < ApplicationController
     average_minutes = ( minutes.sum / minutes.size ).to_s.rjust( 2, '0' ) # Pad with leading zero if necessary.
   
     "#{ average_hours }:#{ average_minutes }"
-  end
-
-  private
-
-  def string_to_date(letter)
-    x=0
-    months = ["January","February","March","April","May","June","July","August","September","Octuber","November","December"]
-    x= months.index(letter)
-    x=+1
   end
 
 end
