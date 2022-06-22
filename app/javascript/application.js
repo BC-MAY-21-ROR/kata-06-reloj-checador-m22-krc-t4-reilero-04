@@ -9,3 +9,4 @@ import "controllers"
 import "./clock"
 import { Turbo } from "@hotwired/turbo-rails" Turbo.session.drive = false
 
+config.assets.initialize_on_precompile = false
