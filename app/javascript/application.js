@@ -3,10 +3,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require rails-ujs
-
+require("bootstrap");
 import "@hotwired/turbo-rails"
 import "controllers"
 import "./clock"
-import { Turbo } from "@hotwired/turbo-rails" Turbo.session.drive = false
+import { Turbo } from "@hotwired/turbo-rails" 
+Turbo.session.drive = false
 
-config.assets.initialize_on_precompile = false
