@@ -1,11 +1,5 @@
 <h1>Average time check by month</h1>
 
-<%= form_with url: checks_average_by_month_path, method: :get do |form| %>
-  <%= form.text_field :query_text, placeholder: 'Type a month', onChange: 'this.form.requestSubmit()', value: params[:query_text] %>
-<% end %>
-
-<%= show_months %>
-
 <table>
   <thead>
     <tr>
@@ -15,16 +9,54 @@
       <th>
         <p>Employee</p>
       </th>
+      <th>
+        <p>Average check-in</p>
+      </th>
+      <th>
+        <p>Average check-out</p>
+      </th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>
-        
-      </td>
-      <td>
-        
-      </td>
-    </tr>
+    <% show_months.each do |x| %>
+      <% x.each do |month,users| %>
+        <% users.each do |user| %>
+          <tr>
+            <td>
+              <%= month %>
+            </td>
+            <td>
+              <%= user %>
+            </td>
+            <td>
+              <% @employees.each do |employee| %>
+                <% if employee.name == user %>
+                  <% hours = [] %>
+                  <% @checks_average_by_month.each do |attendance| %>
+                    <% if attendance.employee_id == employee.id %>
+                      <% hours<<attendance.check_in.strftime("%H:%M") %>
+                    <% end %>
+                  <% end %>
+                  <%= calculate_average_of_times(hours) %>
+                <% end %>
+              <% end %>
+            </td>
+            <td>
+              <% @employees.each do |employee| %>
+                <% if employee.name == user %>
+                  <% hours = [] %>
+                  <% @checks_average_by_month.each do |attendance| %>
+                    <% if attendance.employee_id == employee.id %>
+                      <% hours<<attendance.check_out.strftime("%H:%M") %>
+                    <% end %>
+                  <% end %>
+                  <%= calculate_average_of_times(hours) %>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
+        <% end%>
+      <% end%>
+    <% end%>
   </tbody>
 </table>
