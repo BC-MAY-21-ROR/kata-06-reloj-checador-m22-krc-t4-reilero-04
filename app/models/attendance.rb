@@ -5,5 +5,6 @@ class Attendance < ApplicationRecord
 #       check_in: 'A'
 
 #   }
+
   belongs_to :employee
 end

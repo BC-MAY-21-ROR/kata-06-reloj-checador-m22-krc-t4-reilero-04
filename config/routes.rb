@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   # get '/products', to: 'products#index'
   get 'attendances_by_day', to: 'attendances_by_day#index'
   get 'absences_reports_by_month', to: 'absences_reports_by_month#index'
+  get 'checks_average_by_month', to: 'checks_average_by_month#index'
 
 end
