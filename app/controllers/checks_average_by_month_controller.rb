@@ -15,14 +15,17 @@ class ChecksAverageByMonthController < ApplicationController
     months = []
 
     attendances.each do |attendance|
-      month = attendance.check_in.strftime("%B")
-      unless months.include?(month=>[])
-        months.push(month=>[])
+      employees.each do |employee|
+        month = attendance.check_in.strftime("%B")
+        months.push({month => employee.id })
       end
     end
 
-    months
+
+    months.uniq
+
   end
+  
 
 
   

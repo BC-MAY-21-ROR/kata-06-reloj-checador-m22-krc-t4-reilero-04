@@ -1,21 +1,67 @@
-<h1>Absences by month</h1>
-<% @employees.each do |employee|%>
-  <div>
-    <%= Date::MONTHNAMES[Date.today.month]%>
-    <%= employee.name %>
-    <%= @attendances_by_day.select { |attendance| attendance.employee_id == employee.id}.count %>
-  </div>
+<h1>Report worked and absences days</h1>
+<% @employees.each do |employee| %>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <%= employee.name%>
+        </th>
+        <th>
+          Total days month
+        </th>
+        <th>
+          Workable days on month
+        </th>
+        <th>
+          Weekend days
+        </th>
+        <th>
+          Real worked days
+        </th>
+        <th>
+          Absences on month
+        </th>
+        <th>
+          Worked vs Absences
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% counts = employee.attendances.group_by_month.count%>
+        <% counts.sort.each do |m|%>
+          <td>
+            <%= m[0].strftime("%B - %Y")%>
+          </td>
+          <td>
+            <% num_days_month = Time.days_in_month(m[0].month, m[0].year)%>
+            <%= num_days_month%>
+          </td>
+          <td>
+            <% first_day = m[0]%>
+            <% last_day = m[0] + (num_days_month -1).days %>
+            <% laboral_days = (first_day.to_datetime..last_day.to_datetime).select do |day| %>
+              <% day.strftime("%A") != "Sunday" && day.strftime("%A") != "Saturday" %>
+            <% end %>
+            <%= laboral_days = laboral_days.size %>
+          </td>
+          <td>
+            <% weekend_days = num_days_month - laboral_days %>
+            <%= weekend_days %>
+          </td>
+          <td>
+            <% worked_days = m[1] %>
+            <%= worked_days%>
+          </td>
+          <td>
+            <% absence_days = laboral_days - worked_days%>
+            <%= absence_days %>
+          </td>
+          <td>
+            <%= "#{(worked_days.to_f / laboral_days).round(2)*100}% - #{(absence_days.to_f / laboral_days).round(2)*100}%"  %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% end %>
-<% days_january = Time.days_in_month(1, 2022) %>
-<% days_february = Time.days_in_month(2, 2022) %>
-<% days_march = Time.days_in_month(3, 2022) %>
-<% days_april = Time.days_in_month(4, 2022) %>
-<% days_ = Time.days_in_month(5, 2022) %>
-<% days = Time.days_in_month(6, 2022) %>
-<% days = Time.days_in_month(7, 2022) %>
-<% days = Time.days_in_month(8, 2022) %>
-<% days = Time.days_in_month(9, 2022) %>
-<% days = Time.days_in_month(10, 2022) %>
-<% days = Time.days_in_month(11, 2022) %>
-<% days = Time.days_in_month(12, 2022) %>
-<%= days %>
