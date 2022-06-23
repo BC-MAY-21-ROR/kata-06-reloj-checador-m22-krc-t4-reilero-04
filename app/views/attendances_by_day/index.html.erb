@@ -49,8 +49,3 @@
     <% end %>
   </tbody>
 </table>
-<% @employees.each do |employee|%>
-  <% employee.attendances.each do |attendance|%>
-    <%= attendance.check_in%>
-  <% end %>
-<% end %>

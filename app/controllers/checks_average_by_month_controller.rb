@@ -54,3 +54,4 @@ class ChecksAverageByMonthController < ApplicationController
   end
 
 end
+

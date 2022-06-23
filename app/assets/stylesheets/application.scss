@@ -15,7 +15,7 @@
  */
 
  /* Set the global variables for everything. Change these to use your own fonts and colours. */
- @import "bootstrap";
+//  @import "bootstrap";
 :root {
     /* Set sans-serif & mono fonts */
     --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
@@ -530,7 +530,8 @@
     background: none;
     margin: 0;
     padding: 0;
-  }@import "bootstrap";
+  }
+  // @import "bootstrap";
 
 
   .notice {
