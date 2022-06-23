@@ -1,9 +1,15 @@
-<% if current_employee %>
-  Current session as: <%= current_employee.name %>
-  <%= button_to "Log out", destroy_employee_session_path, method: :delete %>
-<% else %>
-  <%= link_to "Log in", new_employee_session_path, :method => :get %>
-<% end %>
-<%= link_to attendances_path do %>
-  <h1>Check time clock</h1>
-<% end %>
+<div id="header">
+  <div>
+    <%= link_to attendances_path do %>
+      <h1>Check time clock</h1>
+    <% end %>
+  </div>
+  <div>
+    <% if current_employee %>
+      Current session as: <%= current_employee.name %>
+      <%= button_to "Log out", destroy_employee_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Log in", new_employee_session_path, :method => :get %>
+    <% end %>
+  </div>
+</div>

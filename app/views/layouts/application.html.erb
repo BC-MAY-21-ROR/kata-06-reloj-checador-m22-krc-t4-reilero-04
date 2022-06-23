@@ -9,9 +9,15 @@
     <%= javascript_importmap_tags %>
   </head>
   <body  onload="mueveReloj()">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <h5><%= render 'shared/header'%></h5>
-    <%= yield %>
+    <div id="all">
+      <% if notice %>
+       <p class="notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+       <p class="alert"><%= alert %></p>
+      <% end %>
+      <h5><%= render 'shared/header'%></h5>
+      <%= yield %>
+    </div>
   </body>
 </html>

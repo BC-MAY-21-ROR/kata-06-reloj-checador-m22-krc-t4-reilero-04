@@ -1,23 +1,25 @@
 <%= javascript_include_tag 'clock'%>
-<h1>Home Check In</h1>
-<div>
-  <h3>
-    <%= @date = Time.now.strftime("%d-%m-%Y") %>
-  </h3>
-</div>
-<form name="form_reloj">
-  <input class="clock_input" type="text" name="reloj" size="10" onfocus="window.document.form_reloj.reloj.blur()">
-</form>
-<hr>
-<%= form_with model: @attendance do |form| %>
+<div id="login">
+  <h1>Home Check In</h1>
   <div>
-    <%= form.label 'Private number' %>
-    <%= form.text_field :employee_private_number %>
+    <h3>
+      <%= @date = Time.now.strftime("%d/%m/%Y") %>
+    </h3>
   </div>
+  <form name="form_reloj">
+    <input class="clock_input" type="text" name="reloj" size="10" onfocus="window.document.form_reloj.reloj.blur()">
+  </form>
+  <hr>
+  <%= form_with model: @attendance do |form| %>
+    <div>
+      <%= form.label 'Private number' %>
+      <%= form.text_field :employee_private_number %>
+    </div>
+    <div>
+      <%= form.submit 'Check' %>
+    </div>
+  <% end %>
   <div>
-    <%= form.submit 'Check' %>
+    <%= button_to 'Admin Panel', admin_index_path, method: :get%>
   </div>
-<% end %>
-<div>
-  <%= button_to 'Admin Panel', admin_index_path, method: :get%>
 </div>
