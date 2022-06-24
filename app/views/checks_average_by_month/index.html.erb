@@ -1,62 +1,68 @@
-<h1>Average time check by month</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>
-        <p>Month</p>
-      </th>
-      <th>
-        <p>Employee</p>
-      </th>
-      <th>
-        <p>Average check-in</p>
-      </th>
-      <th>
-        <p>Average check-out</p>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% show_months.each do |x| %>
-      <% x.each do |month,users| %>
-        <% users.each do |user| %>
-          <tr>
-            <td>
-              <%= month %>
-            </td>
-            <td>
-              <%= user %>
-            </td>
-            <td>
-              <% @employees.each do |employee| %>
-                <% if employee.name == user %>
-                  <% hours = [] %>
-                  <% @checks_average_by_month.each do |attendance| %>
-                    <% if attendance.employee_id == employee.id %>
-                      <% hours<<attendance.check_in.strftime("%H:%M") %>
+<div id="check_by_month">
+  <div id="check_by_month_top">
+    <h1>Average time check by month</h1>
+  </div>
+  <div id=check_by_month_table>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <p>Month</p>
+          </th>
+          <th>
+            <p>Employee</p>
+          </th>
+          <th>
+            <p>Average check-in</p>
+          </th>
+          <th>
+            <p>Average check-out</p>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% show_months.each do |x| %>
+          <% x.each do |month,users| %>
+            <% users.each do |user| %>
+              <tr>
+                <td>
+                  <%= month %>
+                </td>
+                <td>
+                  <%= user %>
+                </td>
+                <td>
+                  <% @employees.each do |employee| %>
+                    <% if employee.name == user %>
+                      <% hours = [] %>
+                      <% @checks_average_by_month.each do |attendance| %>
+                        <% if attendance.employee_id == employee.id %>
+                          <% hours<<attendance.check_in.strftime("%H:%M") %>
+                        <% end %>
+                      <% end %>
+                      <%= calculate_average_of_times(hours) %>
                     <% end %>
                   <% end %>
-                  <%= calculate_average_of_times(hours) %>
-                <% end %>
-              <% end %>
-            </td>
-            <td>
-              <% @employees.each do |employee| %>
-                <% if employee.name == user %>
-                  <% hours = [] %>
-                  <% @checks_average_by_month.each do |attendance| %>
-                    <% if attendance.employee_id == employee.id %>
-                      <% hours<<attendance.check_out.strftime("%H:%M") %>
+                </td>
+                <td>
+                  <% @employees.each do |employee| %>
+                    <% if employee.name == user %>
+                      <% hours = [] %>
+                      <% @checks_average_by_month.each do |attendance| %>
+                        <% if attendance.employee_id == employee.id %>
+                          <% hours<<attendance.check_out.strftime("%H:%M") %>
+                        <% end %>
+                      <% end %>
+                      <%= calculate_average_of_times(hours) %>
                     <% end %>
                   <% end %>
-                  <%= calculate_average_of_times(hours) %>
-                <% end %>
-              <% end %>
-            </td>
-          </tr>
+                </td>
+              </tr>
+            <% end%>
+          <% end%>
         <% end%>
-      <% end%>
-    <% end%>
-  </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
+  <%= render 'shared/back_to_reports' %>
+</div>

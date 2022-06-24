@@ -1,8 +1,14 @@
-<h1>Absence report by month</h1>
-
-<% @employees.each do |employee|%>
-  <div>
-    <%= employee.name %>
-    <%= @attendances_by_day.select { |attendance| attendance.employee_id == employee.id}.count %>
+<div id="ab_by_month">
+  <div id="ab_by_month_top">
+    <h1>Absence report by month</h1>
   </div>
-<% end %>
+  <div id="ab_by_month_info">
+    <% @employees.each do |employee|%>
+      <div>
+        <%= employee.name %>
+        <%= @attendances_by_day.select { |attendance| attendance.employee_id == employee.id}.count %>
+      </div>
+    <% end %>
+  </div>
+  <%= render 'shared/back_to_reports' %>
+</div>

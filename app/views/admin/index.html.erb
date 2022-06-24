@@ -7,11 +7,11 @@
   </div>
   <div id="admin-users">
     <h1>Admin Users</h1>
-    <ul id="admin-list">
+    <ul>
       <% @admins.each do |admin| %>
         <li><%= admin.name %></li>
       <% end %>
     </ul>
   </div>
-  <%= link_to  "Volver", root_path %>
+  <%= link_to  "Go back home", root_path %>
 </div>

@@ -1,56 +1,57 @@
-<h1>Attendances by day</h1>
-<%= form_with url: attendances_by_day_path, method: :get do |form| %>
-  <!--<%= form.label :date %>-->
-  <%= form.text_field :query_text, placeholder: 'nombre empleado', onChange: 'this.form.requestSubmit()', value: params[:query_text] %>
-<% end %>
-<table>
-  <thead>
-    <tr>
-      <th>
-        <p>Date</p>
-      </th>
-      <th>
-        <p>Employee</p>
-      </th>
-      <th>
-        <p>Check-in</p>
-      </th>
-      <th>
-        <p>Check-out</p>
-      </th>
-      <th>
-        <p>Worked Hours</p>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @attendances_by_day.each do |attendance_by_day|%>
-      <% @employees.each do |employee| %>
-        <% if employee.id == attendance_by_day.employee_id %>
-          <tr>
-            <td>
-              <%=attendance_by_day.check_in.strftime("%d-%m-%Y")%>
-            </td>
-            <td>
-              <%=employee.name%>
-            </td>
-            <td>
-              <%= attendance_by_day.check_in.strftime("%H:%M:%S") %>
-            </td>
-            <td>
-              <%= attendance_by_day.check_out.strftime("%H:%M:%S") if attendance_by_day.check_out != nil %>
-            </td>
-            <td>
-              <%= ((attendance_by_day.check_out - attendance_by_day.check_in) / 60 / 60).round(2) if attendance_by_day.check_out != nil %>
-            </td>
-          </tr>
-        <% end %>
-      <% end %>
+<div id="a_by_day">
+  <div id="a_by_day_top">
+    <h1>Attendances by day</h1>
+    <%= form_with url: attendances_by_day_path, method: :get do |form| %>
+      <%= form.text_field :query_text, placeholder: 'Text employee name...', onChange: 'this.form.requestSubmit()', value: params[:query_text] %>
     <% end %>
-  </tbody>
-</table>
-<% @employees.each do |employee|%>
-  <% employee.attendances.each do |attendance|%>
-    <%= attendance.check_in%>
-  <% end %>
-<% end %>
+  </div>
+  <div id="a_by_day_table">
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <p>Date</p>
+          </th>
+          <th>
+            <p>Employee</p>
+          </th>
+          <th>
+            <p>Check-in</p>
+          </th>
+          <th>
+            <p>Check-out</p>
+          </th>
+          <th>
+            <p>Worked Hours</p>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @attendances_by_day.each do |attendance_by_day|%>
+          <% @employees.each do |employee| %>
+            <% if employee.id == attendance_by_day.employee_id %>
+              <tr>
+                <td>
+                  <%=attendance_by_day.check_in.strftime("%d-%m-%Y")%>
+                </td>
+                <td>
+                  <%=employee.name%>
+                </td>
+                <td>
+                  <%= attendance_by_day.check_in.strftime("%H:%M:%S") %>
+                </td>
+                <td>
+                  <%= attendance_by_day.check_out.strftime("%H:%M:%S") if attendance_by_day.check_out != nil %>
+                </td>
+                <td>
+                  <%= ((attendance_by_day.check_out - attendance_by_day.check_in) / 60 / 60).round(2) if attendance_by_day.check_out != nil %>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <%= render 'shared/back_to_reports' %>
+</div>
