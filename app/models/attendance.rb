@@ -1,10 +1,4 @@
 class Attendance < ApplicationRecord
-
-#   include PgSearch::Model
-#   pg_search_scope :search_full_text, against: {
-#       check_in: 'A'
-
-#   }
-
+  scope :group_by_month, -> { group("date_trunc('month', check_in) ") }
   belongs_to :employee
 end
