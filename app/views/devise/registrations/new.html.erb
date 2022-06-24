@@ -30,11 +30,11 @@
   </div>
   <div>
     <%= f.label :admin %>
-    <%= f.text_field :admin %>
+    <%= f.select :admin, options_for_select([true, false]) %>
   </div>
   <div>
     <%= f.label :store_id %>
-    <%= f.text_field :store_id %>
+    <%= collection_select(:employee, :store_id, Store.all, :id, :full_store) %>
   </div>
   <div class="actions">
     <%= f.submit "Crear" %>
