@@ -352,8 +352,7 @@ table thead th:first-child {
 
 /*--- EMLPOYEES edit--- */
 
-/*--- EMLPOYEES show--- */
-#employee-info{
+.gray-panel{
   display: flex;
   flex-direction: column;
   padding-top: 20px;
@@ -367,8 +366,6 @@ table thead th:first-child {
   -webkit-box-shadow: 5px 6px 13px 2px rgba(0,0,0,0.82); 
   box-shadow: 5px 6px 13px 2px rgba(0,0,0,0.82);
 }
-
-
 /*--- STORES index--- */
 
 /*--- STORES new--- */

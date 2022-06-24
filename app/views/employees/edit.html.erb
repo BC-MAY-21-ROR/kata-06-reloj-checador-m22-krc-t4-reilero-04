@@ -1,35 +1,37 @@
-<h1>Edit Employees</h1>
-<%= form_with model: @employee do |form| %>
-  <div>
-    <%= form.label :id %>
-    <%= form.text_field :id, :disabled=>true %>
-  </div>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-  <div>
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-  <div>
-    <%= form.label :position %>
-    <%= form.text_field :position %>
-  </div>
-  <div>
-    <%= form.label :private_number %>
-    <%= form.text_field :private_number %>
-  </div>
-  <div>
-    <%= form.label 'Rol (Admin?)' %>
-    <%= form.text_field :admin %>
-  </div>
-  <div>
-    <%= form.label 'Branch id assigned' %>
-    <%= collection_select(:employee, :store_id, Store.all, :id, :full_store) %>
-  </div>
-  <div>
-    <%= form.submit ' Edit employee' %>
-  </div>
+<div id="employee-edit" class="gray-panel">
+  <h1>Edit Employees</h1>
+  <%= form_with model: @employee do |form| %>
+    <div>
+      <%= form.label :id %>
+      <%= form.text_field :id, :disabled=>true %>
+    </div>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <div>
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
+    <div>
+      <%= form.label :position %>
+      <%= form.text_field :position %>
+    </div>
+    <div>
+      <%= form.label :private_number %>
+      <%= form.text_field :private_number %>
+    </div>
+    <div>
+      <%= form.label 'Rol (Admin?)' %>
+      <%= form.text_field :admin %>
+    </div>
+    <div>
+      <%= form.label 'Branch id assigned' %>
+      <%= collection_select(:employee, :store_id, Store.all, :id, :full_store) %>
+    </div>
+    <div>
+      <%= form.submit ' Edit employee' %>
+    </div>
   <% end %>
   <%= render 'back_to_employee' %>
+</div>
