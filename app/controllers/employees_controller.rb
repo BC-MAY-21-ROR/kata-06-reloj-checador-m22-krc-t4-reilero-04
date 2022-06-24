@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class EmployeesController < ApplicationController
-  # before_action :authenticate_employee!
+  before_action :authenticate_employee!
   def index
     @employees = Employee.all
     if params[:query_text].present?

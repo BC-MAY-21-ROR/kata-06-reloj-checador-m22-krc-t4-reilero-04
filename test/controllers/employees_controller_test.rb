@@ -10,7 +10,7 @@ class EmployeesControllerTest < ActionDispatch::IntegrationTest
 
   test 'can not get employees index without authenticate' do
     get employees_path
-    assert_response :redirect
+    assert_redirected_to new_employee_session_path
   end
 
   test 'can get employees index if employee is logged in and is admin' do
@@ -22,12 +22,12 @@ class EmployeesControllerTest < ActionDispatch::IntegrationTest
   test 'can not get employees index if employee is logged in but is not admin' do
     sign_in @not_admin
     get employees_path
-    assert_response :redirect
+    assert_redirected_to new_employee_session_path
   end
 
   test 'can not get employees new without authenticate' do
     get new_employee_registration_path
-    assert_response :redirect
+    assert_redirected_to new_employee_session_path
   end
 
   test 'can get employees new if employee is logged in and is admin' do
@@ -38,8 +38,8 @@ class EmployeesControllerTest < ActionDispatch::IntegrationTest
 
   test 'can not get employees new if employee is logged in but is not admin' do
     sign_in @not_admin
-    get employees_path
-    assert_response :redirect
+    get new_employee_registration_path
+    assert_redirected_to new_employee_session_path
   end
 
 
