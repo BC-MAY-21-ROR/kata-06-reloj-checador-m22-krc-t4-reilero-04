@@ -1,37 +1,94 @@
- @import "bootstrap";
+@import "bootstrap";
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-align: center;
 }
 
-body{
-  background: #6a11cb;
-  background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
-  background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
-}
-
-#all{
-  width: 50%;
-  display:flex;
+body {
+  display: flex;
   justify-content: center;
-  
+  background: #6a11cb;
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(106, 17, 203, 1),
+    rgba(37, 117, 252, 1)
+  );
+  background: linear-gradient(
+    to right,
+    rgba(106, 17, 203, 1),
+    rgba(37, 117, 252, 1)
+  );
 }
 
- #header{
+#all {
+  background-color: rgb(66, 62, 62);
+}
+
+#header {
   width: 50%;
   background-color: gray;
   height: 100px;
   width: 100%;
+}
 
- }
-
- #login{
+#login {
   background-color: rgb(66, 62, 62);
   color: white;
   border-radius: 50px;
   height: 700px;
   width: 450px;
- }
+}
+#admin-users {
+  display: flex;
+  flex-direction: column;
+}
+#admin-panel {
+  gap: 0.75em;
+  background-color: rgb(66, 62, 62);
+  color: white;
+
+  #admin-list {
+    width: 50%;
+    background-color: #222;
+  }
+  .panel-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+  }
+  .panel-buttons button {
+    background-color: #222;
+    border-radius: 4px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Farfetch Basis", "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0;
+    max-width: none;
+    min-height: 44px;
+    min-width: 10px;
+    outline: none;
+    overflow: hidden;
+    padding: 9px 20px 8px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 75%;
+  }
+
+  .panel-buttons button:hover,
+  .panel-buttons button:focus {
+    opacity: 0.75;
+  }
+}

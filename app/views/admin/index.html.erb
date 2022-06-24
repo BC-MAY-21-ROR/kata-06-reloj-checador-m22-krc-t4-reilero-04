@@ -1,17 +1,19 @@
-<h1>Admin Panel</h1>
-<div>
-  <%= button_to "Manage Employees", employees_path, method: :get %>
-  <%= button_to "Manage Company Branches", stores_path, method: :get %>
-  <%= button_to "Reports", reports_path, method: :get %>
-</div>
-<div>
-  <h1>Admin Users</h1>
-  <div>
-    <% @admins.each do |admin| %>
-      <div>
-        <%= admin.name %>
-      </div>
-    <% end %>
+<div id="admin-panel">
+  <h1>Admin Panel</h1>
+  <div class="panel-buttons">
+    <%= button_to "Manage Employees", employees_path, method: :get %>
+    <%= button_to "Manage Company Branches", stores_path, method: :get %>
+    <%= button_to "Reports", reports_path, method: :get %>
   </div>
+  <div id="admin-users">
+    <h1>Admin Users</h1>
+    <div>
+      <ul id="admin-list">
+        <% @admins.each do |admin| %>
+          <li><%= admin.name %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <%= link_to  "Volver", root_path %>
 </div>
-<%= link_to  "Volver", root_path %>
