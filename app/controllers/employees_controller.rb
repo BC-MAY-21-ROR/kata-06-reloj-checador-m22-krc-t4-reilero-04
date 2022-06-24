@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
 class EmployeesController < ApplicationController
-
+  # before_action :authenticate_employee!
   def index
-    # @employees = Employee.select { |x| x.admin == true }
-    # @employees = Employee.where(admin: true)
     @employees = Employee.all
     if params[:query_text].present?
       @employees = @employees.global_search(params[:query_text])

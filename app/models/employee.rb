@@ -14,8 +14,7 @@ class Employee < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  belongs_to :store
-  has_many :attendances
+
 
   def active_for_authentication?
     # remember to call the super
