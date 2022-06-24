@@ -1,11 +1,11 @@
-<div class="gray-panel">
+<div id="employee-index" class="gray-panel">
   <hr>
   <h1>EMPLOYEES</h1>
   <%= form_with url: employees_path, method: :get do |form| %>
     <!--<%= form.label :date %>-->
-    <%= form.text_field :query_text, placeholder: 'nombre empleado', onChange: 'this.form.requestSubmit()', value: params[:query_text] %>
+    <%= form.text_field :query_text, placeholder: 'Name', onChange: 'this.form.requestSubmit()', value: params[:query_text] %>
   <% end %>
-  <div>
+  <div id="employee-list">
     <% @employees.each do |employee| %>
       <div>
         <%= employee.name %>
@@ -16,7 +16,7 @@
     <% end %>
   </div>
   <div>
-    <%= button_to 'Create New Employee', new_employee_registration_path, method: :get %>
+    <%= button_to 'Create New Employee', new_employee_registration_path, method: :get , class: "blue-button"%>
   </div>
   <%= render 'shared/back_to_admin' %>
 </div>

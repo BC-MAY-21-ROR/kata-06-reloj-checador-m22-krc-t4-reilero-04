@@ -29,7 +29,7 @@
     <label for="">Branch:</label>
     <%= @employee.store.full_store %>
   </div>
-  <%= button_to  "Edit Employee", edit_employee_path, method: :get%>
-  <%= button_to  "Delete Employee", @employee, method: :delete %>
+  <%= button_to  "Edit Employee", edit_employee_path, method: :get, class: "blue-button"%>
+  <%= button_to  "Delete Employee", @employee, method: :delete, class: "red-button"%>
   <%= render 'back_to_employee' %>
 </div>
