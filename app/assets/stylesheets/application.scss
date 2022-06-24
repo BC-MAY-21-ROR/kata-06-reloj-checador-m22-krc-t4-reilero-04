@@ -1,6 +1,6 @@
- @import "bootstrap";
+@import "bootstrap";
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -194,4 +194,59 @@ body{
       color: black;
     }
   }
+}
+
+/* --- admin index --- */
+#admin-panel {
+  gap: 0.75em;
+  background-color: rgb(66, 62, 62);
+  color: white;
+
+  .panel-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+
+    button {
+      background-color: #222;
+      border-radius: 4px;
+      border-style: none;
+      box-sizing: border-box;
+      color: #fff;
+      display: inline-block;
+      font-family: "Farfetch Basis", "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.5;
+      margin: 0;
+      max-width: none;
+      min-height: 44px;
+      min-width: 10px;
+      outline: none;
+      overflow: hidden;
+      padding: 9px 20px 8px;
+      position: relative;
+      text-align: center;
+      text-transform: none;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      width: 75%;
+    }
+    button:hover,
+    button:focus {
+      opacity: 0.75;
+    }
+  }
+  
+  #admin-users {
+    display: flex;
+    flex-direction: column;
+
+    ul {
+        width: 50%;
+        background-color: #222;
+    }
+  }
+  
 }
