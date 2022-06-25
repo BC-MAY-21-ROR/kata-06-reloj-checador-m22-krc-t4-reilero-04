@@ -331,7 +331,7 @@ table thead th:first-child {
   #a_by_day_table {
     margin-top: 20px;
     overflow: auto;
-    height: 100%;
+    height: 100%; 
   }
 }
 
@@ -366,12 +366,6 @@ table thead th:first-child {
   }
 }
 
-/*--- EMLPOYEES index--- */
-
-/*--- EMLPOYEES new--- */
-
-/*--- EMLPOYEES edit--- */
-
 .gray-panel {
   display: flex;
   flex-direction: column;
@@ -385,10 +379,9 @@ table thead th:first-child {
   -webkit-box-shadow: 5px 6px 13px 2px rgba(0, 0, 0, 0.82);
   box-shadow: 5px 6px 13px 2px rgba(0, 0, 0, 0.82);
 }
-/*--- STORES index--- */
 
-/*--- STORES new--- */
 
-/*--- STORES edit--- */
-
-/*--- STORES show--- */
+#ab_by_month_tables{
+  overflow: auto;
+  height: 900px;
+}
