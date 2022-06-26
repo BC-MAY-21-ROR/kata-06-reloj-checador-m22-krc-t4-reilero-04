@@ -1,41 +1,35 @@
-<div>
+<div id="employee-info" class="gray-panel">
   <h1>Employee Information</h1>
   <hr>
   <div>
-    <div>
-      <div>
-        <label for="">Id:</label>
-        <%= @employee.id %>
-      </div>
-      <div>
-        <label for="">Name:</label>
-        <%= @employee.name %>
-      </div>
-      <div>
-        <label for="">Email:</label>
-        <%= @employee.email %>
-      </div>
-      <div>
-        <label for="">Company Position:</label>
-        <%= @employee.position %>
-      </div>
-      <div>
-        <label for="">Private Number:</label>
-        <%= @employee.private_number %>
-      </div>
-      <div>
-        <label for="">Admin Rol:</label>
-        <%= @employee.admin %>
-      </div>
-      <div>
-        <label for="">Branch:</label>
-        <%= @employee.store.full_store %>
-      </div>
-    </div>
-    <button>
-      <%= link_to  "Edit Employee", edit_employee_path, class: "btn btn-inverse" %>
-    </button>
-    <%= button_to  "Delete Employee", @employee, method: :delete %>
+    <label for="">Id:</label>
+    <%= @employee.id %>
   </div>
+  <div>
+    <label for="">Name:</label>
+    <%= @employee.name %>
+  </div>
+  <div>
+    <label for="">Email:</label>
+    <%= @employee.email %>
+  </div>
+  <div>
+    <label for="">Company Position:</label>
+    <%= @employee.position %>
+  </div>
+  <div>
+    <label for="">Private Number:</label>
+    <%= @employee.private_number %>
+  </div>
+  <div>
+    <label for="">Admin Rol:</label>
+    <%= @employee.admin %>
+  </div>
+  <div>
+    <label for="">Branch:</label>
+    <%= @employee.store.full_store %>
+  </div>
+  <%= button_to  "Edit Employee", edit_employee_path, method: :get, class: "blue-button"%>
+  <%= button_to  "Delete Employee", @employee, method: :delete, class: "red-button"%>
+  <%= render 'back_to_employee' %>
 </div>
-<%= render 'back_to_employee' %>

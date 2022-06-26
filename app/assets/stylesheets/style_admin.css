@@ -68,3 +68,24 @@ section {
   font-size: 20pt;
   text-align: center;
 }
+
+button{
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #ffffff;
+  -webkit-border-radius: 52px;
+  border-radius: 52px;
+  font: normal normal bold 20px/normal Arial, Helvetica, sans-serif;
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(26,51,61,0);
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,1) ;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,1) ;
+  text-shadow: -1px -1px 0 rgba(15,73,168,0.66) ;
+}
