@@ -13,17 +13,4 @@ class AttendancesByDayControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
   
-  # test 'should home check In' do
-  #   sign_in !@admin
-
-  #   patch attendances_path(employees(:employee_one)), params: {
-  #     employee: { 
-  #       private_number: 1
-  #     } 
-  #   }
-
-  #   assert_redirected_to employee_path
-  #   assert_equal flash[:notice], 'Succesfully check'
-  # end
-
 end
