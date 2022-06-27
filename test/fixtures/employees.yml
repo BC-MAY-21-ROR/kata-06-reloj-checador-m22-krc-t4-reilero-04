@@ -1,15 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  email: MyString
-  position: MyString
+employee_one:
+  id: 1
+  name: Agustin
+  email: agustin@gmail.com
+  position: Seller
+  encrypted_password: <%= Devise::Encryptor.digest(Employee, 'password') %>
   private_number: 1
-  employee_number: 1
+  store_id: 1
+  admin: true
 
-two:
-  name: MyString
-  email: MyString
-  position: MyString
-  private_number: 1
-  employee_number: 1
+employee_two:
+  id: 2
+  name: Carlos 
+  email: carlos@gmail.com
+  position: Manager
+  encrypted_password: <%= Devise::Encryptor.digest(Employee, 'password') %>  
+  private_number: 2
+  store_id: 2
+  admin: false

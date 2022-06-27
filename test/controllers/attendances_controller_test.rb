@@ -1,7 +1,6 @@
 require "test_helper"
 
-class AttendancesByDayControllerTest < ActionDispatch::IntegrationTest
-
+class AttendancesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @admin = employees(:employee_one)
     @not_admin = employees(:employee_two)
@@ -12,5 +11,5 @@ class AttendancesByDayControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
   end
-  
+
 end

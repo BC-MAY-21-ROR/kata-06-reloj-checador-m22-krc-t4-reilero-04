@@ -5,6 +5,4 @@ class ReportsController < ApplicationController
     @reports = Attendance.all
   end
 
-
-
 end

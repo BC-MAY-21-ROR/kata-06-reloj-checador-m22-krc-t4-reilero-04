@@ -10,5 +10,5 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "./clock"
 import { Turbo } from "@hotwired/turbo-rails" 
-Turbo.session.drive = false
+// Turbo.session.drive = false
 
