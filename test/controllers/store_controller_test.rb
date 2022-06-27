@@ -43,13 +43,5 @@ class StoresControllerTest < ActionDispatch::IntegrationTest
     assert_equal flash[:notice], 'Store edited ok'
   end
 
-  test "should destroy a store" do
-    sign_in @admin
-    assert_difference("Store.count", -1) do
-      delete stores_url(stores(:store_one))
-    end
 
-    assert_redirected_to stores_path
-    assert_equal flash[:notice], 'Store deleted ok'
-  end
 end
