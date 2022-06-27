@@ -13,8 +13,8 @@ development:
   <<: *default
   database: check_time_clock/development
   host: localhost
-  user: user_one
-  password: password
+  user: postgres
+  password: 123
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
@@ -22,8 +22,8 @@ test:
   <<: *default
   database: check_time_clock/test
   host: localhost
-  user: user_one
-  password: password
+  user: postgres
+  password: 123
 
 
 production:

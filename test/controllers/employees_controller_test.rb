@@ -61,6 +61,7 @@ class EmployeesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should delete an employee" do
+    sign_in @admin
     assert_difference("Employee.count", -1) do
       delete employee_path(employees(:employee_one))
     end
