@@ -43,5 +43,4 @@ class StoresControllerTest < ActionDispatch::IntegrationTest
     assert_equal flash[:notice], 'Store edited ok'
   end
 
-
 end

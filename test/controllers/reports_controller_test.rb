@@ -11,7 +11,6 @@ class ReportsControllerTest < ActionDispatch::IntegrationTest
 
     
     assert_response :success
-    # assert_redirected_to reports_path
   end
 
 end
