@@ -1,47 +1,53 @@
-<h1>REPORTS</h1>
-<%= button_to "Attendance by day", attendances_by_day_path, method: :get %>
-<%= button_to "Average time employees checked in/out by month", checks_average_by_month_path, method: :get %>
-<%= button_to "Absence report by month", absences_reports_by_month_path, method: :get %>
-<%= render 'shared/back_to_admin' %>
-<h2>Attendances today</h2>
-<table>
-  <thead>
-    <tr>
-      <th>
-        <p>Date</p>
-      </th>
-      <th>
-        <p>Employee</p>
-      </th>
-      <th>
-        <p>Check-in</p>
-      </th>
-      <th>
-        <p>Check-out</p>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @employees = Employee.all %>
-    <% @reports.each do |report|%>
-      <% @employees.each do |employee| %>
-        <% if employee.id == report.employee_id && report.check_in.strftime("%d-%m-%Y") == Time.now.strftime("%d-%m-%Y") %>
-          <tr>
-            <td>
-              <%=report.check_in.strftime("%d-%m-%Y")%>
-            </td>
-            <td>
-              <%=employee.name%>
-            </td>
-            <td>
-              <%= report.check_in.strftime("%H:%M:%S") %>
-            </td>
-            <td>
-              <%= report.check_out.strftime("%H:%M:%S") if report.check_out != nil %>
-            </td>
-          </tr>
+<div id="reports">
+  <div id="reports_buttons">
+    <h1>REPORTS</h1>
+    <%= button_to "Attendance by day", attendances_by_day_path, method: :get %>
+    <%= button_to "Average time employees checked in/out by month", checks_average_by_month_path, method: :get %>
+    <%= button_to "Absence report by month", absences_reports_by_month_path, method: :get %>
+    <%= render 'shared/back_to_admin' %>
+  </div>
+  <div id="reports_table">
+    <h2>Attendances today</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <p>Date</p>
+          </th>
+          <th>
+            <p>Employee</p>
+          </th>
+          <th>
+            <p>Check-in</p>
+          </th>
+          <th>
+            <p>Check-out</p>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @employees = Employee.all %>
+        <% @reports.each do |report|%>
+          <% @employees.each do |employee| %>
+            <% if employee.id == report.employee_id && report.check_in.strftime("%d-%m-%Y") == Time.now.strftime("%d-%m-%Y") %>
+              <tr>
+                <td>
+                  <%=report.check_in.strftime("%d-%m-%Y")%>
+                </td>
+                <td>
+                  <%=employee.name%>
+                </td>
+                <td>
+                  <%= report.check_in.strftime("%H:%M:%S") %>
+                </td>
+                <td>
+                  <%= report.check_out.strftime("%H:%M:%S") if report.check_out != nil %>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
         <% end %>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
+</div>
